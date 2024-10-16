@@ -1,0 +1,39 @@
+<p>
+  <button
+    type="button"
+    class="btn btn-outline-primary"
+    (click)="collapse.toggle()"
+    [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample"
+  >
+    preferiti
+  </button>
+</p>
+<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+  <ul>
+    <li>trsdsd</li>
+  </ul>
+</div>
+<!-- home -->
+<h1>home works!</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let prod of allProduct">
+    <div class="card h-100">
+      <img
+        src="{{ prod.images[0] }}"
+        class="card-img-top object-fit-contain"
+        height="300"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ prod.title }}</h5>
+        <p class="card-text">
+          {{ prod.description }}
+        </p>
+        <button type="button" class="btn btn-primary me-2">
+          Aggiungi al carrello
+        </button>
+        <button type="button" class="btn btn-secondary">preferiti</button>
+      </div>
+    </div>
+  </div>
+</div>
